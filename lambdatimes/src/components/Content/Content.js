@@ -48,7 +48,13 @@ export default class Content extends Component {
       return this.state.cards;
     } else {
       const selected = this.state.selected;
-      return this.state.cards.selected;
+      const cards = this.state.cards;
+
+      const selectedCards = cards.filter(card => {
+        return card.tab === selected;
+      })
+
+      return selectedCards;
     }
 
 
@@ -56,6 +62,8 @@ export default class Content extends Component {
   };
 
   render() {
+    console.log(this.filterCards());
+
     return (
       <div className="content-container">
         {/*

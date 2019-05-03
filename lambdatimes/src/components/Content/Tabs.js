@@ -3,16 +3,16 @@ import Tab from './Tab';
 const Tabs = props => {
   const { tabs, selectTabHandler, selectedTab } = props;
 
-  const tab = tabs.map(tab => {
+  const tab = tabs.map((tab, i) => {
     return <Tab
-              key={tab.headline}
+              key={i}
               selectTabHandler={selectTabHandler}
               selectedTab={selectedTab}
               tab={tab}
             />
 
   });
-  
+
   return (
     <div className="tabs">
       <div className="topics">
